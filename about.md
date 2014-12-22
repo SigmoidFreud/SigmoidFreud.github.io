@@ -4,14 +4,16 @@ title: About
 permalink: /about/
 ---
 
-A medium inspired Jekyll blog theme. The basic idea came from the Ghost theme 
-[Readium 2.0](http://www.svenread.com/readium-ghost-theme/). I use mediator on my own blog [The Base](blog.base68.com).
+I am looking to become a full time Data Scientist or some hybrid Data Scientist/Engineer, and I feel as though I am on the path. I have a love for mathematics and computer science and Data Science seems to strike the perfect balance for me.
 
-You can **download** the theme here:
-[https://github.com/dirkfabisch/mediator](https://github.com/dirkfabisch/mediator) 
+### More Information
 
-You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+ If anyone is looking to collaborate on ideas that they have in this field or any ideas about my posts or thing s I should post about please do not hesitate to contact me.
+ 
+Reading Lists: (To be compiled)
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+Quora Topics: [Here](http://www.quora.com/How-do-I-become-a-data-scientist) is where my inspiration and some of my ideas come from.
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+### Contact me
+
+[kodalisushanth@gmail.com](mailto:email@domain.com)
