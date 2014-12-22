@@ -520,7 +520,7 @@ print recommendation("zvNimI98mrmhgNOOrzOiGg",10)
 
 **Results comparison**
 
-The following is an implementation of a collaborative filtering model and you can test the models to compare the results for research puprposes
+The following is an implementation of a collaborative filtering model and you can test the models to compare the results for research purposes
 
 {% highlight python %}
 from scrapy.spider import BaseSpider
