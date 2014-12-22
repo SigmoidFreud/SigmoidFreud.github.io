@@ -19,8 +19,8 @@ author_image: "/assets/images/author.jpg"
 
 paginate:	5
 
-url: "github.com/skodali1" # the base hostname & protocol for your site
-baseurl: "github.com/skodali1"
+url: "" # the base hostname & protocol for your site
+baseurl: "https://github.com/skodali1"
 
 # social icons and sharing options
 social:
