@@ -3,11 +3,11 @@ markdown: redcarpet
 highlighter: pygments
 
 # Site settings
-title: "Mediator"
+title: "Sigmoid Freud"
 description: > # this means to ignore newlines until "email:"
-   A Jekyll theme - Medium inspired
+   An Exploration in Data Science
 
-email: a-mail@mail.mail
+email: kodalisushanth@gmail.com
 #blog logo
 logo: "/assets/images/df_logo.jpg"
 # blog cover
@@ -19,7 +19,7 @@ author_image: "/assets/images/author.jpg"
 
 paginate:	5
 
-url: "skodali1.github.io" # the base hostname & protocol for your site
+url: "" # the base hostname & protocol for your site
 baseurl: ""
 
 # social icons and sharing options
