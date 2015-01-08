@@ -23,16 +23,16 @@ def googlesearch(searchfor):
     data = results['responseData']
     return data
 
-args = sys.argv[1:]
-m = 50000000000
-if len(args) != 2:
-    print "need two words as arguments"
-    exit(0)
-fx = int(googlesearch(args[0])['cursor']['estimatedResultCount'])
-fy = int(googlesearch(args[1])['cursor']['estimatedResultCount'])
-fxy = int(googlesearch(args[0]+"+"+args[1])['cursor']['estimatedResultCount'])
-ngdnumerator = max(math.log10(fx),math.log10(fy))-math.log10(fxy)
-ngddenominator = math.log10(m)-min(math.log10(fx),math.log10(fy))
-ngd = ngdnumerator/ngddenominator
-print ngd
+    args = sys.argv[1:]
+    m = 50000000000
+    if len(args) != 2:
+        print "need two words as arguments"
+        exit(0)
+    fx = int(googlesearch(args[0])['cursor']['estimatedResultCount'])
+    fy = int(googlesearch(args[1])['cursor']['estimatedResultCount'])
+    fxy = int(googlesearch(args[0]+"+"+args[1])['cursor']['estimatedResultCount'])
+    ngdnumerator = max(math.log10(fx),math.log10(fy))-math.log10(fxy)
+    ngddenominator = math.log10(m)-min(math.log10(fx),math.log10(fy))
+    ngd = ngdnumerator/ngddenominator
+    print ngd
 {% endhighlight %}
