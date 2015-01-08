@@ -5,7 +5,7 @@ category: Data Science
 
 ---
 
-The following is just a code snippet that will tell give you back a continuous score between 0 and 1 as to how similar two things are according to google
+The following is just a code snippet that will tell give you back a continuous score between 0 and 1 as to how similar two things are according to google. The script is adapted from the Normalized Google Distance formula highlighted on wikipedia [here](http://en.wikipedia.org/wiki/Normalized_Google_distance).
 
 {% highlight python %}
   import google
