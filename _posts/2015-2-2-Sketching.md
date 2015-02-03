@@ -7,7 +7,7 @@ category: Data Science
 
 Here we will examine the implementation of Hyperloglog (a sketching algorithm) which estimates SET counts on a collection of streaming objects or even a static collection. The idea is simple. Taking the objects in the stream or collection you apply a set of hasing functions that map objects to a series of bits and then instead of having to compare objects you just compare bits thus greatly reducing space and computational complexity. You do sacrifice exactness, but for most business practices an accurate representation of the data will almost always beat out the brute force approach of obtaining exact counts.
 
-Paper with implementation of the algorithm [here](http://algo.inria.fr/flajolet/Publications/FlFuGaMe07.pdf).
+Paper with implementation of the algorithm [here](http://algo.inria.fr/flajolet/Publications/FlFuGaMe07.pdf) (pgs. 129-130).
 
 {% highlight python %}
 import shakespeare
