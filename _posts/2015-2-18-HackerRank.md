@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HackerRank problem in machine learning Expert Level. 
+title: HackerRank problem in machine learning Expert Level. For the record I am not an expert.
 category: Data Science
 
 ---
