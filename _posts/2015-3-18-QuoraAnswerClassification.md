@@ -5,7 +5,7 @@ category: Data Science
 
 ---
 
-This problem featured [here](http://www.quora.com/challenges#answer_classifier) seemed interesting and it was a good \
+This problem featured [here](http://www.quora.com/challenges#answer_classifier) seemed interesting and it was a good 
 place for me to try something new because of the mix of categorical and continuous data fields. I implemented a feature ranking algorithm featured 
 [here](http://perso.uclouvain.be/michel.verleysen/papers/kdir11gd.pdf). It is a filter wrapper approach that measures the importance
 of each feature and ranks them accordingly. 
