@@ -1,3 +1,11 @@
+---
+layout: post
+title: IOTA Micropayment POC
+category: IOTA
+description: IOTA Micropayment POC with Chris Dukakis.
+
+---
+
 **Power of the IOTA Cryptocurrency**
 
 Have you ever seen Office Space the movie? I was inspired initially as strange as it is, by that movie. 
@@ -46,12 +54,16 @@ def requestData(api_key=None):
     return None
 {% endhighlight %}
 
+**Request API Key**
+
 Now we have the method to get a new API key from Chris' server. It is very simple. All we do is make i get request for a new API key.
 {% highlight python %}
 def generate_api_key():
     r = requests.get("http://46.101.109.238/new_api_key")
     return r.content.decode("utf-8")
 {% endhighlight %}
+
+**Create API Obj and Initiate Transfer**
 
 From the headers returned from the server we proceed to create the transaction dictionary and an IOTA object instantiation to send the transfer if the end user has agreed.
 {% highlight python %}
@@ -94,6 +106,8 @@ def create_iota_object(uri, auth_token, seed=None):
         seed=seed,
     )
 {% endhighlight %}
+
+**Reqeusting a New Seed/Address Combo**
 
 If you noticed the seed argument for IOTA obj instantiation you can create a new seed/address combination using the following:
 
@@ -159,6 +173,8 @@ def output_seed(seed):
     compat.input('')
 {% endhighlight %}
 
+**Transaction Codeblock**
+
 After the following codeblock for the transaction in the requestData method:
 {% highlight python %}
 st_response = api.send_transfer(
@@ -174,6 +190,9 @@ st_response = api.send_transfer(
 bundle = st_response['bundle']  # type: Bundle
 {% endhighlight %}
 We can use the transfer bundle tail transaction hash data to link a request using the create_request method. This method has a hot swappable url argument for API requests. For now it serves weather data based on city choice<\p>
+
+**Creating the Request and Requesting Data**
+
 {% highlight python %}
 def create_request(url="http://46.101.109.238/forecast/", city='Chicago', headers=None):
     # type: (Text, Optional[dict]) -> dict
