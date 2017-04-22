@@ -1,12 +1,12 @@
 **Power of the IOTA Cryptocurrency**
 
-<p>Have you ever seen Office Space the movie? I was inspired initially as strange as it is, by that movie. 
-The protagonists in the move write software to reroute money that is a rounding error caused by banking transfer and generic payments to the company. This seems like it would not be a lot of money, but in just a few weeks they were able to amass hundreds of thousands of dollars. Thats a lot! This is a prime reason why a free form platform for micropayments is essential for exchanging payments for services that have infinitesimal cost. The physical cost of a transaction on centralized platform will exceed the payment for the service thus forcing either over purchase or no purchase at all for a given microservice. This is how IOTA will disrupt the current payment system and allow free instantaneous exchange of micropayments without having to worry about fees. Most importantly, you wont be charged extra money because you didn't meet some sort of minimum denomination and no forcible purchases beyond the need of the customer. We plan to highlight much more of the potential of this technology in future posts. It goes way beyond this simple POC Chris and I have set up.<\p>
+Have you ever seen Office Space the movie? I was inspired initially as strange as it is, by that movie. 
+The protagonists in the move write software to reroute money that is a rounding error caused by banking transfer and generic payments to the company. This seems like it would not be a lot of money, but in just a few weeks they were able to amass hundreds of thousands of dollars. Thats a lot! This is a prime reason why a free form platform for micropayments is essential for exchanging payments for services that have infinitesimal cost. The physical cost of a transaction on centralized platform will exceed the payment for the service thus forcing either over purchase or no purchase at all for a given microservice. This is how IOTA will disrupt the current payment system and allow free instantaneous exchange of micropayments without having to worry about fees. Most importantly, you wont be charged extra money because you didn't meet some sort of minimum denomination and no forcible purchases beyond the need of the customer. We plan to highlight much more of the potential of this technology in future posts. It goes way beyond this simple POC Chris and I have set up.
 
 
-<p>Past my inspiration, I was able to collaborate with Chris Dukakis and come up with a POC that exchanges weather data for infinitesimal payments INCLUDING ZERO. Below there will be code snippets to highlight these features and I will walk you through how they all work. Let's proceed.<\p>
+Past my inspiration, I was able to collaborate with Chris Dukakis and come up with a POC that exchanges weather data for infinitesimal payments INCLUDING ZERO. Below there will be code snippets to highlight these features and I will walk you through how they all work. Let's proceed.
 
-<p>Here is the first code snippet, with comments included to help you along the way. Chris has graciously set up a server to generate new API keys if you dont have one and he has also set up a tool to return the address, price, and transaction tag of a potential request. After we generate the new API (if you dont already have one), we initiate a request for the payment and add the transactions to the tangle. All the code inside the payment request if-else-block will be explained as you scroll down.<\p>
+Here is the first code snippet, with comments included to help you along the way. Chris has graciously set up a server to generate new API keys if you dont have one and he has also set up a tool to return the address, price, and transaction tag of a potential request. After we generate the new API (if you dont already have one), we initiate a request for the payment and add the transactions to the tangle. All the code inside the payment request if-else-block will be explained as you scroll down.
 
 {% highlight python %}
 def requestData(api_key=None):
@@ -46,14 +46,14 @@ def requestData(api_key=None):
     return None
 {% endhighlight %}
 
-<p>Now we have the method to get a new API key from Chris' server. It is very simple. All we do is make i get request for a new API key.<\p>
+Now we have the method to get a new API key from Chris' server. It is very simple. All we do is make i get request for a new API key.
 {% highlight python %}
 def generate_api_key():
     r = requests.get("http://46.101.109.238/new_api_key")
     return r.content.decode("utf-8")
 {% endhighlight %}
 
-<p>From the headers returned from the server we proceed to create the transaction dictionary and an IOTA object instantiation to send the transfer if the end user has agreed.<\p>
+From the headers returned from the server we proceed to create the transaction dictionary and an IOTA object instantiation to send the transfer if the end user has agreed.
 {% highlight python %}
 def create_transaction_dictionary(address, price, depth=3, request_tag=None):
     # type: (int, Optional[binary_type]) -> dict
@@ -95,7 +95,7 @@ def create_iota_object(uri, auth_token, seed=None):
     )
 {% endhighlight %}
 
-<p>If you noticed the seed argument for IOTA obj instantiation you can create a new seed/address combination using the following:<\p>
+If you noticed the seed argument for IOTA obj instantiation you can create a new seed/address combination using the following:
 
 {% highlight python %}
 def generate_addresses(index=0, uri='ip address', auth_token=None):
@@ -159,7 +159,7 @@ def output_seed(seed):
     compat.input('')
 {% endhighlight %}
 
-<p>After the following codeblock for the transaction in the requestData method:<\p>
+After the following codeblock for the transaction in the requestData method:
 {% highlight python %}
 st_response = api.send_transfer(
             depth=transaction['depth'],
@@ -173,11 +173,13 @@ st_response = api.send_transfer(
         # bundle.
 bundle = st_response['bundle']  # type: Bundle
 {% endhighlight %}
-<p>We can use the transfer bundle tail transaction hash data to link a request using the create_request method. This method has a hot swappable url argument for API requests. For now it serves weather data based on city choice<\p>
+We can use the transfer bundle tail transaction hash data to link a request using the create_request method. This method has a hot swappable url argument for API requests. For now it serves weather data based on city choice<\p>
 {% highlight python %}
 def create_request(url="http://46.101.109.238/forecast/", city='Chicago', headers=None):
     # type: (Text, Optional[dict]) -> dict
     return {"request": requests.get(url+city, headers=headers), "request-id": register_request()}
 {% endhighlight %}
 
-<p>So finally after the transactions ae attached to the tangle post payment the data will be served and the POC is complete!! As I said earlier there are much more powerful displays of the technology in the pipeline and we hope to show that this technology will revolutionize the IoT industry.<\p>
+So finally after the transactions ae attached to the tangle post payment the data will be served and the POC is complete!! As I said earlier there are much more powerful displays of the technology in the pipeline and we hope to show that this technology will revolutionize the IoT industry.
+
+Lastly [here](https://github.com/SigmoidFreud/iota-api-micropayment-template) is the link for the full code snippet and please do not hesitate to make comments with questions/suggestions or make PR's to the repository
