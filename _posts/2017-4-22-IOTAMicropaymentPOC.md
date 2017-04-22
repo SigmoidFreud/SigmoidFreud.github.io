@@ -189,7 +189,7 @@ st_response = api.send_transfer(
         # bundle.
 bundle = st_response['bundle']  # type: Bundle
 {% endhighlight %}
-We can use the transfer bundle tail transaction hash data to link a request using the create_request method. This method has a hot swappable url argument for API requests. For now it serves weather data based on city choice<\p>
+We can use the transfer bundle tail transaction hash data to link a request using the create_request method. This method has a hot swappable url argument for API requests. For now it serves weather data based on city choice.
 
 **Creating the Request and Requesting Data**
 
